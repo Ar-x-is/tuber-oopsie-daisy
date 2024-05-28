@@ -21,6 +21,7 @@ include(CTest)
 add_executable(tuberd src/server.cpp)
 target_link_libraries(tuberd PRIVATE fmt::fmt ${LIBHTTPSERVER_LIBRARIES} pybind11::embed)
 
+add_subdirectory(pybind11)
 pybind11_add_module(test_module MODULE tests/test_module.cpp)
 target_include_directories(test_module PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
